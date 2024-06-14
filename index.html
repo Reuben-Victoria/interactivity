@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.2/sass.min.js"></script>
   </head>
   <body>
+    <div id="cursor"></div>
     <div class="splash" id="splash">
       <span class="loader"></span>
     </div>
@@ -44,6 +45,34 @@
       "The only way to achieve the impossible is to believe it is possible.",
     ];
 
+    //cursor
+
+    const cursor = document.getElementById("cursor");
+
+    let settings = {
+      mouseX: 0,
+      mouseY: 0,
+      xPos: 0,
+      yPos: 0,
+      speed: 8,
+    };
+    let cursorWidth = cursor.offsetWidth;
+    let cursorHeight = cursor.offsetHeight;
+    function animate() {
+      settings.xPos += (settings.mouseX - settings.xPos) / settings.speed;
+      settings.yPos += (settings.mouseY - settings.yPos) / settings.speed;
+      cursor.style.transform = `translate(${
+        settings.xPos - cursorWidth / 2
+      }px, ${settings.yPos - cursorHeight / 2}px)`;
+      requestAnimationFrame(animate);
+    }
+    animate();
+    document.addEventListener("mousemove", (e) => {
+      settings.mouseX = e.pageX;
+      settings.mouseY = e.pageY;
+    });
+
+    //Quotes
     const quoteElement = document.querySelector("h1");
     const button = document.querySelector("button");
 
@@ -64,6 +93,7 @@
           "#232323"
         );
         document.documentElement.style.setProperty("--text-color", "#e0e0e0");
+        cursor.style.mixBlendMode = "lighten";
         switchStatus = true;
         handle.classList.add("move-right");
       } else {
@@ -74,6 +104,7 @@
         );
         document.documentElement.style.setProperty("--text-color", "#232323");
         handle.classList.remove("move-right");
+        cursor.style.mixBlendMode = "darken";
       }
     };
 
@@ -83,13 +114,13 @@
     const splash = document.getElementById("splash");
     const container = document.getElementById("container");
 
-    function removeSplash(){
+    function removeSplash() {
       splash.classList.add("remove-splash");
       container.classList.add("container");
     }
 
     setTimeout(() => {
-      removeSplash()
+      removeSplash();
     }, 2000);
   </script>
 </html>

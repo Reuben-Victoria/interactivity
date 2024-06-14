@@ -16,6 +16,16 @@ body {
   height: 100vh;
 }
 
+#cursor {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #a1097b;
+  pointer-events: none;
+  mix-blend-mode: darken;
+}
+
 .splash {
   position: absolute;
   z-index: 20;
