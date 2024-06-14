@@ -20,7 +20,7 @@ body {
   position: absolute;
   z-index: 20;
   display: grid;
-  background-color: darkkhaki;
+  background-color: #e5d0e3;
   place-content: center;
   width: 100%;
   height: 100%;
@@ -50,6 +50,7 @@ body {
 .toggle .switch {
   width: 35px;
   background: #2f2f2f;
+  cursor: pointer;
   border-radius: 5em;
   display: flex;
   align-items: center;
@@ -133,7 +134,7 @@ button .arrow-right {
   height: 48px;
   border-radius: 50%;
   display: inline-block;
-  border-top: 4px solid #fff;
+  border-top: 4px solid white;
   border-right: 4px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
@@ -148,7 +149,7 @@ button .arrow-right {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border-left: 4px solid #ff3d00;
+  border-left: 4px solid #e0b0d5;
   border-bottom: 4px solid transparent;
   animation: rotation 0.5s linear infinite reverse;
 }

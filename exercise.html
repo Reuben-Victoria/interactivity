@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="exercise.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3.1.1/dist/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.2/sass.min.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="content-left">
+        <p>
+          To become a great designer, you need more than talent alone. You need
+          a bit more
+        </p>
+        <h4>Reuben Victoria ~</h4>
+      </div>
+      <div class="content-right">
+        <div class="content-right-pro">
+          <button id="button1">Discover what's extra</button>
+          <div class="icon">
+            <span class="iconify caret" data-icon="ph:caret-right-fill"></span>
+          </div>
+        </div>
+
+        <div class="needs">
+          <ul class="needs-list">
+            <li>Dedication</li>
+            <li>Consistency</li>
+            <li>Perseverance</li>
+            <li>Grit</li>
+          </ul>
+          <button id="button2">~ a little bit of insanity</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const button1Element = document.getElementById("button1");
+    const button2Element = document.getElementById("button2");
+
+    const discoverElement = document.querySelector(".content-right-pro");
+    const needsElement = document.querySelector(".needs");
+    let showDetails = false;
+
+    const detailPanel = () => {
+      if (!showDetails) {
+        discoverElement.style.transform = "translateX(100%)";
+        needsElement.style.transform = "translateX(0)";
+        showDetails = true;
+      } else {
+        discoverElement.style.transform = "translateX(0)";
+        needsElement.style.transform = "translateX(-110%)";
+        showDetails = false;
+      }
+    };
+
+    button1Element.addEventListener("click", detailPanel);
+    button2Element.addEventListener("click", detailPanel);
+
+  </script>
+</html>
